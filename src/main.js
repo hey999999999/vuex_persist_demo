@@ -7,6 +7,8 @@ import store from './store'
 
 Vue.config.productionTip = false
 
+Vue.mixin({cancan:true});
+
 new Vue({
   router,
   store,

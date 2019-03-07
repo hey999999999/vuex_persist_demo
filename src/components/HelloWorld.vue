@@ -1,5 +1,15 @@
 <template>
   <div class="hello">
+    <p>{{ count }}</p>
+    <p>
+      <button @click="increment">+</button>
+      <button @click="decrement">-</button>
+    </p>
+    <p>{{ c2 }}</p>
+    <p>
+      <button @click="inc2">+</button>
+      <button @click="dec2">-</button>
+    </p>
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -34,6 +44,18 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  mounted: function(){
+  },
+  computed: {
+    count() { return this.$store.state.count; },
+    c2() { return this.$store.state.c2; }
+  },
+  methods: {
+    increment() { this.$store.commit('increment', 1); },
+    decrement() { this.$store.commit('decrement', 1); },
+    inc2() { this.$store.commit('inc2', 1); },
+    dec2() { this.$store.commit('dec2', 1); },
   }
 }
 </script>
